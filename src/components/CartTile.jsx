@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {removeFromCart} from "../store/slices/cart-slice"
 
 export const CartTile = ({ cartItem }) => {
 
 
-    const handleRemoveFromCart = () =>{};
+    const dispatch = useDispatch();
+    const handleRemoveFromCart = () =>{
+        dispatch(removeFromCart(cartItem.id));
+    };
 
 
 
